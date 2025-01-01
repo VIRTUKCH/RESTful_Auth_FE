@@ -17,7 +17,7 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://your-django-backend-url/register/', data);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/register/`, data, data);
       console.log(response.data);
       // 성공적으로 회원가입 후 처리
     } catch (error) {
